@@ -9,14 +9,24 @@ body {
   font-weight: 400;
 }
 
+#contenedor-encabezado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+img {
+    height: 9rem;
+    width: auto;
+}
+
 h1 {
-  text-align: center;
-  margin-top: 3rem;
+  margin-top: 1.2rem;
 }
 
 h2 {
     font-weight: 300;
-    text-align: center;
     margin-bottom: 3rem;
   }
 
