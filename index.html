@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YOGA TIME | Elementos de yoga</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <!-- Encabezado -->
+      <h1>YOGA TIME</h1>
+      <h2>Elementos para tu práctica de yoga</h2>
+
+      <!-- Contenedor para mensajes de producto agregado-->
+      <div id="mensaje-contenedor" class="mb-4"></div>
+
+      <!-- Contenedor para productos -->
+      <div class="row" id="productos">
+        <!-- Productos -->
+      </div>
+
+      <h3>Carrito</h3>
+      <ul id="carrito" class="list-group mb-4">
+        <!-- Productos del carrito -->
+      </ul>
+      <p id="total-carrito" class="font-weight-bold">Total: $0</p>
+
+      <h3>Confirmación de compra</h3>
+      <form id="formulario-checkout">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" id="nombre" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo Electrónico</label>
+          <input type="email" id="email" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label for="comentarios" class="form-label">Comentarios</label>
+          <textarea id="comentarios" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Finalizar Compra</button>
+      </form>
+      <!-- Contenedor para mostrar el mensaje de confirmación de compra -->
+      <div id="mensaje-compra" class="mt-4"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
