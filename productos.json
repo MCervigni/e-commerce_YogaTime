@@ -1,80 +1,93 @@
 [
-    {
-        "nombre": "Mat Blue",
-        "id": "001",
-        "precio": 35000,
-        "stock": 12
-    },
-    {
-        "nombre": "Mat Green",
-        "id": "002",
-        "precio": 35000,
-        "stock": 9
-    },
-    {
-        "nombre": "Mat Purple",
-        "id": "003",
-        "precio": 35000,
-        "stock": 11
-    },
-    {
-        "nombre": "Mat Corcho",
-        "id": "004",
-        "precio": 40000,
-        "stock": 6
-    },
-    {
-        "nombre": "Portamat Liso",
-        "id": "005",
-        "precio": 20000,
-        "stock": 7
-    },
-    {
-        "nombre": "Portamat Mandala",
-        "id": "006",
-        "precio": 22000,
-        "stock": 10
-    },
-    {
-        "nombre": "Bolster Pink",
-        "id": "007",
-        "precio": 18000,
-        "stock": 5
-    },
-    {
-        "nombre": "Bolster Grey",
-        "id": "008",
-        "precio": 18000,
-        "stock": 3
-    },
-    {
-        "nombre": "Bolster Red",
-        "id": "009",
-        "precio": 18000,
-        "stock": 3
-    },
-    {
-        "nombre": "Bloque Madera",
-        "id": "010",
-        "precio": 9000,
-        "stock": 12
-    },
-    {
-        "nombre": "Bloque Goma Eva",
-        "id": "011",
-        "precio": 14000,
-        "stock": 9
-    },
-    {
-        "nombre": "Bloque Corcho",
-        "id": "012",
-        "precio": 18000,
-        "stock": 6
-    },
-    {
-        "nombre": "Cinto",
-        "id": "013",
-        "precio": 6000,
-        "stock": 8
-    }
+  {
+    "nombre": "Mat Blue",
+    "id": "001",
+    "precio": 35000,
+    "stock": 12,
+    "categoria": "mats"
+  },
+  {
+    "nombre": "Mat Green",
+    "id": "002",
+    "precio": 35000,
+    "stock": 9,
+    "categoria": "mats"
+  },
+  {
+    "nombre": "Mat Purple",
+    "id": "003",
+    "precio": 35000,
+    "stock": 11,
+    "categoria": "mats"
+  },
+  {
+    "nombre": "Mat Corcho",
+    "id": "004",
+    "precio": 40000,
+    "stock": 6,
+    "categoria": "mats"
+  },
+  {
+    "nombre": "Portamat Liso",
+    "id": "005",
+    "precio": 20000,
+    "stock": 7,
+    "categoria": "portamats"
+  },
+  {
+    "nombre": "Portamat Mandala",
+    "id": "006",
+    "precio": 22000,
+    "stock": 10,
+    "categoria": "portamats"
+  },
+  {
+    "nombre": "Bolster Pink",
+    "id": "007",
+    "precio": 18000,
+    "stock": 5,
+    "categoria": "bolsters"
+  },
+  {
+    "nombre": "Bolster Grey",
+    "id": "008",
+    "precio": 18000,
+    "stock": 3,
+    "categoria": "bolsters"
+  },
+  {
+    "nombre": "Bolster Red",
+    "id": "009",
+    "precio": 18000,
+    "stock": 3,
+    "categoria": "bolsters"
+  },
+  {
+    "nombre": "Bloque Madera",
+    "id": "010",
+    "precio": 9000,
+    "stock": 12,
+    "categoria": "bloques"
+  },
+  {
+    "nombre": "Bloque Goma Eva",
+    "id": "011",
+    "precio": 14000,
+    "stock": 9,
+    "categoria": "bloques"
+  },
+  {
+    "nombre": "Bloque Corcho",
+    "id": "012",
+    "precio": 18000,
+    "stock": 6,
+    "categoria": "bloques"
+  },
+  {
+    "nombre": "Cinto",
+    "id": "013",
+    "precio": 6000,
+    "stock": 8,
+    "categoria": "cintos"
+  }
 ]

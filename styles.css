@@ -1,24 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap");
 
-
 body {
   font-family: Arial, sans-serif;
-  background-color: #f8f9fa; 
+  background-color: #dee9f0;
   color: #343a40;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
 }
 
 #contenedor-encabezado {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+#filtro-categoria {
+  width: 25rem;
 }
 
 img {
-    height: 9rem;
-    width: auto;
+  height: 9rem;
+  width: auto;
 }
 
 h1 {
@@ -26,34 +33,45 @@ h1 {
 }
 
 h2 {
-    font-weight: 300;
-    margin-bottom: 3rem;
-  }
+  font-weight: 300;
+  margin-bottom: 3rem;
+}
+
+h3 {
+  margin-top: 2.5rem;
+}
 
 .card {
   border: 1px solid #dee2e6;
-  border-radius: 0.25rem; 
+  border-radius: 0.5rem;
   box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.075);
+  width: 20rem;
+  margin: 1rem;
 }
 
 .card-img-top {
-  width: 100%; 
-  height: auto; 
+  width: 100%;
+  height: auto;
   max-height: 300px;
   object-fit: cover;
 }
 
 .row {
-  margin-bottom: 20px; 
+  margin-bottom: 1rem;
+  justify-content: space-around;
 }
 
 #total-carrito {
-  font-size: 1.25rem; 
-  font-weight: bold; 
+  font-size: 1.25rem;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 
 .btn-danger {
-  font-size: 0.875rem; 
+  font-size: 0.875rem;
   padding: 0.25rem 0.5rem;
+}
+
+#formulario-checkout {
+  margin-bottom: 2rem;
 }
