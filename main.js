@@ -33,57 +33,66 @@ function renderizarProductos(categoria = "todos") {
     const divProducto = document.createElement("div");
     divProducto.className = "col-md-4 mb-4";
     divProducto.innerHTML = `
-            <div class="card">
-                <img src="assets/${
-                  producto.nombre
-                }.png" class="card-img-top" alt="${producto.nombre}">
-                <div class="card-body">
-                    <h4 class="card-title">${producto.nombre}</h4>
-                    <small class="text-body-secondary">ID: ${
-                      producto.id
-                    }</small>
-                    <p class="card-text"><b>Precio: $${producto.precio.toLocaleString()}</b></p>
-                    <p class="card-text">Stock: ${producto.stock}</p>
-                    <input type="number" id="cantidad-${
-                      producto.id
-                    }" class="form-control mb-2" value="1" min="1" max="${
+    <div class="card">
+        <img src="assets/${producto.nombre}.png" class="card-img-top" alt="${
+      producto.nombre
+    }">
+        <div class="card-body">
+            <h4 class="card-title">${producto.nombre}</h4>
+            <small class="text-body-secondary">ID: ${producto.id}</small>
+            <p class="card-text"><b>Precio: $${producto.precio.toLocaleString()}</b></p>
+            <p class="card-text">Stock: ${producto.stock}</p>
+            <input type="number" id="cantidad-${
+              producto.id
+            }" class="form-control mb-2" value="1" min="1" max="${
       producto.stock
     }">
-                    <button class="btn btn-primary" data-id="${
-                      producto.id
-                    }">Agregar al carrito</button>
-                </div>
-            </div>
-        `;
+            <button class="btn btn-primary btn-agregar-carrito" data-id="${
+              producto.id
+            }">Agregar al carrito</button>
+        </div>
+    </div>
+  `;
     contenedorProductos.appendChild(divProducto);
   });
 
-  // Asignación del evento click a todos los botones
-  document.querySelectorAll(".btn-primary").forEach((button) => {
+  document.querySelectorAll(".btn-agregar-carrito").forEach((button) => {
+    const id = button.getAttribute("data-id");
     button.addEventListener("click", function () {
-      agregarAlCarrito(this.getAttribute("data-id"));
+      agregarAlCarrito(id);
     });
   });
 }
 
-// Función para agregar productos al carrito
 function agregarAlCarrito(id) {
   const producto = productos.find((p) => p.id === id);
   const cantidadInput = document.getElementById(`cantidad-${id}`);
   const cantidad = parseInt(cantidadInput.value);
 
   if (!cantidad || cantidad <= 0 || cantidad > producto.stock) {
+    Swal.fire({
+      title: `El stock disponible de ${producto.nombre} es de ${producto.stock} unidades`,
+      text: `La cantidad seleccionada debe ser inferior o igual a ${producto.stock}.`,
+      icon: "error",
+    });
     return;
   }
 
-  const itemCarrito = carrito.find((item) => Number(item.id) === Number(id));
-  console.log("Producto encontrado:", itemCarrito);
+  const itemCarrito = carrito.find((item) => item.id === id);
 
   if (itemCarrito) {
+    if (itemCarrito.cantidad + cantidad > producto.stock) {
+      Swal.fire({
+        title: `No hay suficiente stock de ${producto.nombre}`,
+        text: `Ya tienes ${itemCarrito.cantidad} en el carrito, el stock disponible es de ${producto.stock}.`,
+        icon: "error",
+      });
+      return;
+    }
     itemCarrito.cantidad += cantidad;
   } else {
     carrito.push({
-      id: String(producto.id),
+      id: producto.id,
       nombre: producto.nombre,
       precio: producto.precio,
       cantidad,
@@ -110,7 +119,7 @@ function agregarAlCarrito(id) {
       background: "linear-gradient(to right, #50964b, #50964b)",
       borderRadius: "1rem",
     },
-    onClick: function () {}, // Callback after click
+    onClick: function () {},
   }).showToast();
 }
 
@@ -196,6 +205,12 @@ document
     const email = document.getElementById("email").value;
 
     if (carrito.length === 0) {
+      Swal.fire({
+        icon: "warning",
+        title: "Carrito vacío",
+        text: "No puedes finalizar la compra porque el carrito está vacío.",
+        confirmButtonText: "Aceptar",
+      });
       return;
     }
 
